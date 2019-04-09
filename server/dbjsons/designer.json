@@ -1,0 +1,65 @@
+{
+    "designer": {
+      "userID": 0,
+      "brandName": {},
+      "logo": {},
+      "zipcode": {},
+      "city": {},
+      "state": {},
+      "country": {},
+      "area": {},
+      "careerDuration": {
+        "years": {},
+        "months": {}
+      },
+      "ownAStore": true,
+      "storeInfo": [
+        {
+          "zipCode": {},
+          "fullAddress": {},
+          "size": {},
+          "openedFrom": "2019-04-09T19:16:52.467Z",
+          "storeHours": {},
+          "google": {},
+          "facebook": {},
+          "instagram": {},
+          "website": {},
+          "businessPhone": {}
+        }
+      ],
+      "makeFor": {
+        "men": true,
+        "women": false
+      },
+      "typesOfClothes": [
+        "Shirts",
+        "Pants",
+        "Accessories",
+        "Footwear",
+        "Jackets",
+        "Suits"
+      ],
+      "fabrics": [
+        "Cotton",
+        "Wool",
+        "Denim",
+        "Linen",
+        "Sustainable",
+        "Recycled",
+        "Other"
+      ],
+      "gallery": [],
+      "monthlyCollectionRuns": 0,
+      "yearlyCollectionRuns": 0,
+      "busyMonths": "2019-04-09T19:16:52.467Z",
+      "fabricNeededCurrent": [],
+      "collections": [
+          {
+            "fabricNeeded":[]
+          }
+      ],
+      "online": true,
+      "lastActive": "2019-04-09T19:16:52.467Z",
+      "notificationsOn": true
+    }
+  }

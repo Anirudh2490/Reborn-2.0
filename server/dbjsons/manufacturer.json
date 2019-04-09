@@ -1,0 +1,54 @@
+{
+    "manufacturer": {
+      "userID": 0,
+      "nameOfBusiness": {},
+      "logo": {},
+      "zipcode": {},
+      "city": {},
+      "state": {},
+      "country": {},
+      "area": {},
+      "duration": {
+        "years": {},
+        "months": {}
+      },
+      "dateOfBusinessCommencement": "2019-04-09T19:04:03.275Z",
+      "brand": [
+        {
+          "name": {},
+          "verified": true
+        }
+      ],
+      "madefor": {
+        "men": true,
+        "women": false
+      },
+      "typesOfClothes": [
+        "Shirts",
+        "Pants",
+        "Accessories",
+        "Footwear",
+        "Jackets",
+        "Suits"
+      ],
+      "fabrics": [
+        "Cotton",
+        "Wool",
+        "Denim",
+        "Linen",
+        "Sustainable",
+        "Recycled",
+        "Other"
+      ],
+      "gallery": [],
+      "monthlyProductionRuns": 0,
+      "yearlyProductionRuns": 0,
+      "busyDates": "2019-04-09T19:04:03.276Z",
+      "availableFabrics": [],
+      "allListedFabrics": [],
+      "online": true,
+      "lastActive": "2019-04-09T19:04:03.276Z",
+      "notificationsOn": true
+      
+    }
+  }

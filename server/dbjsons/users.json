@@ -1,0 +1,16 @@
+{ 
+"user":
+[
+    {
+        "id": 0,
+        "name": {},
+        "email": {},
+        "phone": {},
+        "password": {},
+        "userType": {
+          "manufacturer": true,
+          "designer": false
+        }
+      }
+    ]
+  }

@@ -1,0 +1,29 @@
+{
+    "fabric": {
+      "userID": {},
+      "fabricType": [],
+      "unit": {
+        "type": [
+          "meters",
+          "kilograms",
+          "grams",
+          "yards"
+        ],
+        "cost": 0,
+        "currency": [
+          "Euro",
+          "US Dollars",
+          "Indian Rupees",
+          "British Pound",
+          "Australian Dollars",
+          "Canadian Dollars"
+        ]
+      },
+      "qtyAvailable": 0,
+      "perUnitSellingPrice": 0,
+      "marketRatePriceListed": true,
+      "availableFrom": "2019-04-09T19:41:24.844Z",
+      "currentlyAvailable": true,
+      "fabricOriginStory": {}
+    }
+  }
