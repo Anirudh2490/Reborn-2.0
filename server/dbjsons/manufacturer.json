@@ -1,6 +1,9 @@
 {
     "manufacturer": {
       "userID": 0,
+
+      "type":["manufacturer"],
+      "profilePercentageComplete": 25,
       "nameOfBusiness": {},
       "logo": {},
       "zipcode": {},

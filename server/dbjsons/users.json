@@ -3,6 +3,7 @@
 [
     {
         "id": 0,
+        "profilePercentageComplete": 10,
         "name": {},
         "email": {},
         "phone": {},

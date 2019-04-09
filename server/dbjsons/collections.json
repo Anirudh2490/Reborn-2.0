@@ -1,9 +1,10 @@
 {
-    "collections": {
-      "designerID": 0,
+    "collection": {
+      "fabricIDs": [],
+      "name":"",
+      "profilePercentageComplete": 100,
       "startDate": "2019-04-09T19:46:37.119Z",
       "collectionPercentage": 0,
-      "aboutCollection": {},
-      "fabrics": []
+      "aboutCollection": {}
     }
   }

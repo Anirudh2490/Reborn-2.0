@@ -1,6 +1,8 @@
 {
     "fabric": {
-      "userID": {},
+      "userID":0,
+      "profilePercentageComplete": 50,
+      "fabricID": 0,
       "fabricType": [],
       "unit": {
         "type": [

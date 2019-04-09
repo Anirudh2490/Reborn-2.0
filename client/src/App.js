@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import '@progress/kendo-theme-default/dist/all.css';
 
 // Import the Grid component.
@@ -22,7 +20,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={"#"} className="App-logo" alt="logo" />
           <h1 className="App-title">{this.state.title}</h1>
         </header>
           <Grid data={this.state.data}>
