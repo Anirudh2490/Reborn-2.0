@@ -1,4 +1,6 @@
-import * as firebase from 'firebase';
+import app from 'firebase/app';
+import 'firebase/auth';
+
 const config = {
     apiKey: "AIzaSyBaAHdOb_CThmGUGHmhlPMMG_vDeD5VrHw",
     authDomain: "reborn-zero-waste-movement.firebaseapp.com",
@@ -7,6 +9,30 @@ const config = {
     storageBucket: "reborn-zero-waste-movement.appspot.com",
     messagingSenderId: "651519575673"
   };
-firebase.initializeApp(config);
-const databaseRef = firebase.database().ref();
-export const todosRef = databaseRef.child("todos")
+  
+class Firebase {
+    
+    constructor() {
+      app.initializeApp(config);
+  
+      this.auth = app.auth();
+    }
+  
+    // *** Auth API ***
+  
+    doCreateUserWithEmailAndPassword = (email, password) =>
+      this.auth.createUserWithEmailAndPassword(email, password);
+  
+    doSignInWithEmailAndPassword = (email, password) =>
+      this.auth.signInWithEmailAndPassword(email, password);
+  
+    doSignOut = () => this.auth.signOut();
+  
+    doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
+  
+    doPasswordUpdate = password =>
+      this.auth.currentUser.updatePassword(password);
+  }
+  
+export default Firebase;
+  
