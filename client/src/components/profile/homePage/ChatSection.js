@@ -5,7 +5,7 @@ import './homepage.css'
 export default class ChatSection extends React.Component {
   render() {
     return (
-        <div>
+        <div className="chatsection">
             <div className="chat-1" style={{height:'800px'}}>
                 <div className="container">
                     <h1 className="header-large-title">Chat 1</h1>
