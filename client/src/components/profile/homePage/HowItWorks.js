@@ -1,9 +1,9 @@
 import React from 'react';
 import './homepage.css'
-
-
+import '@progress/kendo-theme-default/dist/all.css';
 
 export default class HowItWorks extends React.Component {
+
     render() {
       return (
           <div>

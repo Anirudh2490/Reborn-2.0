@@ -5,7 +5,7 @@ import SignedOut from './SignedOut'
 
 const NavBar = () => {
     return(
-        <nav className="nav-wrapper grey darken-8">
+        <nav className="nav-wrapper grey darken-1">
           <div className="container">
             <Link to='/' className='brand-logo'>Shoppermint Networks</Link>
             <SignedIn />

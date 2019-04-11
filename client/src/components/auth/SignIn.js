@@ -1,81 +1,78 @@
-import React, { Component } from "react";
-import AuthService from "./auth-service";
-import { Link, withRouter } from "react-router-dom";
-import Form from "react-bootstrap/Form";
-import content from '../../text.json'
+import React, { Component } from 'react'
+import { Input } from '@progress/kendo-react-inputs';
+import { Button } from '@progress/kendo-react-buttons';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
+export class SignIn extends Component {
+  state={
+    email:"",
+    phone:"",
+    isAUser: false,
+    formSuccess: false
+  };
 
-class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { email: "", password: "", error: false };
-        this.service = new AuthService();
-    }
-
-    handleFormSubmit = event => {
-        event.preventDefault();
-        const email = this.state.email
-        const password = this.state.password;
-        this.service
-            .login(email, password)
-            .then(response => {
-                this.setState({ email: "", password: "" });
-                this.props.getUser(response);
-                this.props.history.push("/");
-            })
-            .catch(error => {
-                this.setState({ error: true });
-                console.log(error);
-            });
-    };
-
-    handleChange = event => {
-        const { name, value } = event.target;
-        this.setState({ [name]: value });
-    };
-    render() {
+render() {
         return (
-            <div className="container login-container">
-                <div className="row">
-                    <div className="col-4" />
-                    <div className="col-4">
-
-                        <Form onSubmit={this.handleFormSubmit}>
-                            <Form.Group controlId="formBasicEmail">
-                                <Form.Control
-                                    size="sm"
-                                    type="email"
-                                    placeholder="Enter email"
-                                    name="email"
-                                    value={this.state.email}
-                                    onChange={e => this.handleChange(e)}
-                                />
-                            </Form.Group>
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Control
-                                    size="sm"
-                                    type="password"
-                                    placeholder="Password"
-                                    name="password"
-                                    value={this.state.password}
-                                    onChange={e => this.handleChange(e)}
-                                />
-                            </Form.Group>
-                            <input className="btn btn-primary" type="submit" value="Login" />
-                        </Form>
-                        <hr />
-                        {this.state.error ? <p className='error-message'>{content.errorMessage.errorMessage}!</p> : ""}
+            <div className="row example-wrapper">
+                <div className="col-xs-12 col-sm-6 example-col">
+                    <div className="card">
+                        <div className="card-block">
+                            <form className="k-form" onSubmit={this.handleSubmit}>
+                                <fieldset>
+                                    <legend> Start chatting </legend>
+                                    <label className="k-form-field">
+                                        <span>Email</span>
+                                        <Input
+                                            name="email"
+                                            type="email"
+                                            required={true}
+                                        />
+                                    </label>
+                                </fieldset>
+                                <label className="k-form-field">
+                                        <span>Phone Number</span>
+                                        <PhoneInput
+                                            placeholder="Enter phone number"
+                                            value={ this.state.phone }
+                                            onChange={ phone => this.setState({ phone }) } />
+                                    </label>
+                                <Button className="mt-3" type="submit" primary={true}>Submit</Button>
+                            </form>
+                        </div>
                     </div>
-                    <div className="col-4" />
-
                 </div>
-                <p className="login-message">
-                    Dont have account? <Link to={"/signup"}> Signup</Link><br />
-                    Forgot your password? ... Sorry about that man
-                </p>
+                {this.state.formSuccess && (
+                    <div
+                        className="alert alert-formSuccess"
+                        style={{ position: 'absolute' }}
+                    >
+                        Form submitted!
+                    </div>)}
             </div>
         );
     }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.setState({
+          email:this.state.email,
+          phone: this.state.phone, 
+          isAUser: this.checkStatus(this.state.email, this.state.password),
+          formSuccess: true})
+        setTimeout(() => {
+ this.setState({ formSuccess: false });
+}, 3000);
+    }
+
+    checkStatus = (email, phone) => {
+      // Function that checks if email and phone number is existing in DB.
+      // If existing, then setState({isAUser:true})
+      return false
+    }
+
+    
 }
 
-export default withRouter(Login);
+
+export default SignIn;
