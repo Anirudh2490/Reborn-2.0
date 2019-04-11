@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import AuthService from "./auth-service";
 // import { ApiAiClient } from 'api-ai-javascript';
 import Home from './components/profile/homePage/Home'
-
+import { BrowserRouter } from 'react-router-dom'
 
 class App extends Component {
     constructor(props) {
@@ -38,7 +38,11 @@ class App extends Component {
     };
     render() {
         return (
-           <Home />
+            <BrowserRouter>
+              <div className="App">
+                <Home />
+              </div>
+            </BrowserRouter>
         );
     }
 }
