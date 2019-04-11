@@ -13,11 +13,19 @@
     "@progress/kendo-react-intl": "^2.8.0",
     "@progress/kendo-theme-bootstrap": "^3.3.1",
     "@progress/kendo-theme-default": "^3.5.1",
+    "@progress/kendo-ui": "^2019.1.403",
     "axios": "^0.18.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-redux": "^7.0.1",
+    "react-redux-firebase": "^2.2.6",
+    "react-responsive-picture": "^3.1.0",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "reactstrap": "^8.0.0",
+    "redux": "^4.0.1",
+    "redux-firestore": "^0.7.3"
   },
   "scripts": {
     "start": "react-scripts start",

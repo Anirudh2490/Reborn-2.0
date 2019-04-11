@@ -1,0 +1,42 @@
+/* */
+
+.header-component {
+    /* The image used */
+    background-image: url(../homePage/images/header.png);
+    width:100%;
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.how-it-works-1 {
+    /* The image used */
+    background-image: url(../homePage/images/HowItWorks-1.png);
+
+    /* Full height */
+    height: 100%; 
+    
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.how-it-works-2 {
+    /* The image used */
+    background-image: url(../homePage/images/HowItWorks-2.png);
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
