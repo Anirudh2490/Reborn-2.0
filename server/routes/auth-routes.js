@@ -6,6 +6,7 @@ const {Storage} = require('@google-cloud/storage');
 // environment.
 const storage = new Storage();
 
+
 // Makes an authenticated API request.
 storage
   .getBuckets()
