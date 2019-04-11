@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
 // import AuthService from "./auth-service";
 // import { ApiAiClient } from 'api-ai-javascript';
@@ -39,10 +40,30 @@ class App extends Component {
     render() {
         return (
            <Home />
+=======
+import React, { Component } from 'react';
+import Signup from './components/auth/SignUp';
+import Login from './components/auth/SignIn';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
+
+class App extends Component {
+    render() {
+        return(
+            <div>
+                <h1>This is how it works</h1>
+                <BrowserRouter>
+                    <Switch>
+                        <Route path="/signup" render={() => <Signup />} />
+                        <Route path="/login" render={() => <Login />} />
+                    </Switch>
+                </BrowserRouter>
+            </div>
+>>>>>>> 3db47f4528782061de7cd3fc1bbeb595c09c90f7
         );
     }
 }
 
+<<<<<<< HEAD
 export default App;
 
 
@@ -136,3 +157,6 @@ export default App;
 // }
 
 // export default withRouter(App);
+=======
+export default App;
+>>>>>>> 3db47f4528782061de7cd3fc1bbeb595c09c90f7
