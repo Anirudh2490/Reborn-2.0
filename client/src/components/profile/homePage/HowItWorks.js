@@ -9,6 +9,8 @@ export default class HowItWorks extends React.Component {
           <div>
               <div className="how-it-works" style={{height:'800px'}}>
                   <div className="container">
+                    <h1 className="howitworks-title">How it works</h1>
+                    <p className="howitworks-small-title">Description</p>
                   </div>
               </div>
             </div>
