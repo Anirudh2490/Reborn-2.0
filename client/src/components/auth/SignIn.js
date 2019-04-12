@@ -1,78 +1,30 @@
-import React, { Component } from 'react'
-import { Input } from '@progress/kendo-react-inputs';
-import { Button } from '@progress/kendo-react-buttons';
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
-
-export class SignIn extends Component {
-  state={
-    email:"",
-    phone:"",
-    isAUser: false,
-    formSuccess: false
-  };
-
-render() {
-        return (
-            <div className="row example-wrapper">
-                <div className="col-xs-12 col-sm-6 example-col">
-                    <div className="card">
-                        <div className="card-block">
-                            <form className="k-form" onSubmit={this.handleSubmit}>
-                                <fieldset>
-                                    <legend> Start chatting </legend>
-                                    <label className="k-form-field">
-                                        <span>Email</span>
-                                        <Input
-                                            name="email"
-                                            type="email"
-                                            required={true}
-                                        />
-                                    </label>
-                                </fieldset>
-                                <label className="k-form-field">
-                                        <span>Phone Number</span>
-                                        <PhoneInput
-                                            placeholder="Enter phone number"
-                                            value={ this.state.phone }
-                                            onChange={ phone => this.setState({ phone }) } />
-                                    </label>
-                                <Button className="mt-3" type="submit" primary={true}>Submit</Button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                {this.state.formSuccess && (
-                    <div
-                        className="alert alert-formSuccess"
-                        style={{ position: 'absolute' }}
-                    >
-                        Form submitted!
-                    </div>)}
-            </div>
-        );
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-        this.setState({
-          email:this.state.email,
-          phone: this.state.phone, 
-          isAUser: this.checkStatus(this.state.email, this.state.password),
-          formSuccess: true})
-        setTimeout(() => {
- this.setState({ formSuccess: false });
-}, 3000);
-    }
-
-    checkStatus = (email, phone) => {
-      // Function that checks if email and phone number is existing in DB.
-      // If existing, then setState({isAUser:true})
-      return false
-    }
-
+import React from 'react';
+import ReactSignupLoginComponent from 'react-signup-login-component';
+ 
+const LoginPage = (props) => {
+    const signupWasClickedCallback = (data) => {
+      console.log(data);
+      alert('Signup callback, see log on the console to see the data.');
+    };
+    const loginWasClickedCallback = (data) => {
+      console.log(data);
+      alert('Login callback, see log on the console to see the data.');
+    };
+    const recoverPasswordWasClickedCallback = (data) => {
+      console.log(data);
+      alert('Recover password callback, see log on the console to see the data.');
+    };
     
-}
-
-
-export default SignIn;
+    return(
+        <div>
+            <ReactSignupLoginComponent
+                title="Login/Signup"
+                handleSignup={signupWasClickedCallback}
+                handleLogin={loginWasClickedCallback}
+                handleRecoverPassword={recoverPasswordWasClickedCallback}
+            />
+        </div>
+    );
+};
+ 
+export default LoginPage;
