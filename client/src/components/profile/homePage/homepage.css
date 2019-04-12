@@ -33,6 +33,9 @@
     border: 3px solid blue;
 }
 
+.my-popup {
+    font-style: oblique
+}
 
 .how-it-works {
     /* The image used */

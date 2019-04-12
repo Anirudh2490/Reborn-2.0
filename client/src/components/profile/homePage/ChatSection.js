@@ -2,7 +2,9 @@ import React from 'react';
 import './homepage.css';
 import { Chat } from '@progress/kendo-react-conversational-ui';
 import '@progress/kendo-theme-default/dist/all.css';
-import SignIn from '../../auth/SignIn'
+import SignIn from '../../auth/SignIn';
+import SelectPath from './SelectPath';
+import Tabs from 'react-bootstrap/Tabs';
 
 
 
@@ -60,39 +62,42 @@ export default class ChatSection extends React.Component {
         let answer = question + " contains exactly " + length + " symbols.";
         return answer;
     }
-    
+
   render() {
     return (
         <div className="chatsection">
             <div className="chat-1" style={{height:'800px'}}>
                 <div className="container">
-                    <h1 className="header-large-title">Chat 1</h1>
+                    <h1 className="header-large-title">Here is where you select path</h1>
+                    <p className="header-small-title">description goes here</p>
+                    <SelectPath />
+                </div>
+            </div>
+            <div className="chat-2" style={{height:'800px'}}>
+                <div className="container">
+                    <h1 className="header-large-title">Chatbot gives info before taking </h1>
+                    <p className="header-small-title">Description</p>
                     <SignIn />
+                    <div className="container" style={{height:'400px'}} >
                     <Chat user={this.user}
                         messages={this.state.messages}
                         onMessageSend={this.addNewMessage}
                         placeholder={"Type a message..."}
                         width={400}>
-                    </Chat>   
-
-                    <p className="header-small-title">description goes here</p>
-                </div>
-            </div>
-            <div className="chat-2" style={{height:'800px'}}>
-                <div className="container">
-                    <h1 className="header-large-title">Chat 2</h1>
-                    <p className="header-small-title">Description</p>
+                    </Chat>
+                    </div>
                 </div>
             </div>
             <div className="chat-3" style={{height:'800px'}}>
                 <div className="container">
-                    <h1 className="header-large-title">Chat 3</h1>
+                    <h1 className="header-large-title">Sign In / Sign Up</h1>
                     <p className="header-small-title">Description</p>
+                    
                 </div>
             </div>
             <div className="chat-4" style={{height:'800px'}}>
                 <div className="container">
-                    <h1 className="header-large-title">Chat 4</h1>
+                    <h1 className="header-large-title">Recent News</h1>
                     <p className="header-small-title">Description</p>
                 </div>
             </div>
