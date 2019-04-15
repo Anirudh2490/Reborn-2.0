@@ -2,7 +2,16 @@ import React, { Component } from "react";
 // import AuthService from "./auth-service";
 // import { ApiAiClient } from 'api-ai-javascript';
 import Home from './components/profile/homePage/Home'
-import { BrowserRouter } from 'react-router-dom'
+import {  BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Provider } from 'react-redux';
+
+
+import SignIn from "./components/auth/SignIn";
+import SignUp from "./components/auth/SignUp";
+
+// const store = createStore(
+//     UserReducer
+// )
 
 class App extends Component {
     constructor(props) {
@@ -40,7 +49,11 @@ class App extends Component {
         return (
             <BrowserRouter>
               <div className="App">
+              <Route exact path='/signin' component={SignIn} />
+              <Route exact path='/signup' component={SignUp} />
+              {/* <Provider store={store}>   */}
                 <Home />
+              {/* </Provider>, */}
               </div>
             </BrowserRouter>
         );
