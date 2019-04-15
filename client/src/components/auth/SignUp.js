@@ -5,6 +5,8 @@ import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signUp } from '../../store/actions/authActions'
 
+
+
 const userTypes = [
   { label: "Manufacturer", value: 'manufacturer' },
   { label: "Designer", value: 'designer' },
@@ -28,6 +30,8 @@ class SignUp extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
+    this.props.signUp(this.state);
+    // this.props.history.push('/');
   }
 
   handleUserType = (userType) => {
@@ -38,7 +42,7 @@ class SignUp extends Component {
 
   render() {
     const { auth, authError } = this.props;
-    if (auth.uid) return <Redirect to='/' /> 
+      if (auth.uid) return <Redirect to='/' /> 
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>
@@ -49,17 +53,17 @@ class SignUp extends Component {
           </div>
           <div className="input-field">
             <label htmlFor="password">Password</label>
-            <input type="password" autocomplete="new-password" onChange={this.handleChange} />
+            <input type="password" id='password' autocomplete="new-password" onChange={this.handleChange} />
           </div>
           <div className="input-field">
             <label htmlFor="fullName">Full Name</label>
             <input type="text" id='fullName' onChange={this.handleChange} />
           </div>
           <div className="input-field">
-          <PhoneInput placeholder="Enter International Code (Ex. +49) and then phone number" value={ this.state.phone } onChange={ phone => this.setState({ phone }) } />
+          <PhoneInput id='phone' placeholder="Enter International Code (Ex. +49) and then phone number" value={ this.state.phone } onChange={ phone => this.setState({ phone }) } />
           </div>
           <div className="input-field">
-          <Select placeholder="Choose your profession" searchable={false} options= { userTypes } value={ this.state.userType } onChange={ this.handleUserType }/>
+          <Select id='userType' placeholder="Choose your profession" searchable={false} options= { userTypes } value={ this.state.userType } onChange={ this.handleUserType }/>
           </div>
           <div className="input-field">
             <button className="btn pink lighten-1 z-depth-0">Sign Up</button>
@@ -76,15 +80,15 @@ class SignUp extends Component {
 const mapStateToProps = (state) => {
   return {
     auth: state.firebase.auth,
-    authError: state.auth.authError
+    // authError: state.auth.authError
   }
 }
 
 const mapDispatchToProps = (dispatch)=> {
   return {
-    signUp: (creds) => dispatch(signUp(creds))
+    signUp: (newUser) => dispatch(signUp(newUser))
   }
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp) //mapStateToProps replaces null after auth
