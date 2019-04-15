@@ -31,12 +31,14 @@ export const signIn = (credentials) => {
   
       firebase.auth().createUserWithEmailAndPassword(
         newUser.email, 
-        newUser.password
+        newUser.password,
       ).then(resp => {
         return firestore.collection('users').doc(resp.user.uid).set({
-          firstName: newUser.firstName,
-          lastName: newUser.lastName,
-          initials: newUser.firstName[0] + newUser.lastName[0]
+          fullname: newUser.fullname,
+          phone: newUser.phone,
+          profilePercentageComplete: 20,
+          userType: newUser.userType,
+          userID: newUser.uid
         });
       }).then(() => {
         dispatch({ type: 'SIGNUP_SUCCESS' });
