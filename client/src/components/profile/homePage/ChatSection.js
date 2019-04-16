@@ -2,7 +2,7 @@ import React from 'react';
 import './homepage.css';
 import { Chat } from '@progress/kendo-react-conversational-ui';
 import '@progress/kendo-theme-default/dist/all.css';
-import SignIn from '../../auth/SignIn';
+// import SignIn from '../../auth/SignIn';
 import UserChecker from '../../auth/UserChecker';
 import SelectPath from './SelectPath';
 import Tabs from 'react-bootstrap/Tabs';
@@ -92,7 +92,7 @@ export default class ChatSection extends React.Component {
             <div className="chat-3" style={{height:'800px'}}>
                 <div className="container">
                     <h1 className="header-large-title">Sign In / Sign Up</h1>
-                    <SignIn />
+                    {/* <SignIn /> */}
                     <p className="header-small-title">Description</p>
                     
                 </div>

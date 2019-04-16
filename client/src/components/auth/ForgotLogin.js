@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import firebase from 'firebase'
 
-export class ForgotLogin extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
+export const ForgotPassword = (props) => {
+    firebase.auth().sendPasswordResetEmail(props.email)
+      .then(function (user) {
+        alert('Please check your email...')
+      }).catch(function (e) {
+        console.log(e)
+      })
   }
-}
 
-export default ForgotLogin
+
+export default ForgotPassword
