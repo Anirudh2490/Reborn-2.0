@@ -34,11 +34,10 @@ export const signIn = (credentials) => {
         newUser.password,
       ).then(resp => {
         return firestore.collection('users').doc(resp.user.uid).set({
-          fullname: newUser.fullname,
+          fullName: newUser.fullName,
           phone: newUser.phone,
           profilePercentageComplete: 20,
-          userType: newUser.userType,
-          userID: newUser.uid
+          userType: newUser.userType
         });
       }).then(() => {
         dispatch({ type: 'SIGNUP_SUCCESS' });
